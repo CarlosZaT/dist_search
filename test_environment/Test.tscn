@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgpxueoipxho7"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_tjs8c"]
+[ext_resource type="PackedScene" uid="uid://1aycg6m7vwpw" path="res://room.tscn" id="1_yacd2"]
+[ext_resource type="PackedScene" uid="uid://t6nkprm2joss" path="res://agent.tscn" id="2_115pc"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_tjs8c")
+
+[node name="Room" parent="." instance=ExtResource("1_yacd2")]
+position = Vector2(640, 368)
+
+[node name="agent1" parent="." instance=ExtResource("2_115pc")]
+modulate = Color(0, 0.631677, 0.362868, 1)
+position = Vector2(376, 152)
+
+[node name="agent2" parent="." instance=ExtResource("2_115pc")]
+modulate = Color(0.999999, 0.480216, 0.117712, 1)
+position = Vector2(904, 152)
+
+[node name="reference" type="Marker2D" parent="."]
+position = Vector2(376, 152)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 97.0
+offset_top = 104.0
+offset_right = 244.0
+offset_bottom = 164.0
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

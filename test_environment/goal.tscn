@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dajk6ck4nch7e"]
+
+[ext_resource type="Texture2D" uid="uid://bqpdbxpd45iyw" path="res://resources/tile_map/tileset_complet.png" id="1_vy324"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_thwu8"]
+light_mode = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6m3o2"]
+size = Vector2(48, 48)
+
+[node name="goal" type="StaticBody2D"]
+material = SubResource("CanvasItemMaterial_thwu8")
+position = Vector2(664, 248)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6m3o2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
+scale = Vector2(2, 2)
+texture = ExtResource("1_vy324")
+offset = Vector2(8.37, 0)
+hframes = 9
+vframes = 9
+frame = 15
